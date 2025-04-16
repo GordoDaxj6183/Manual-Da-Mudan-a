@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual da Mudança</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #000000, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #a259ff;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      margin: 1rem auto;
+    }
+
+    .timer {
+      font-size: 2rem;
+      color: #ff4dc4;
+      margin: 20px 0;
+    }
+
+    .cta-button {
+      background: #a259ff;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #a259ff80;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: #8a3dff;
+    }
+
+    .product-img {
+      margin-top: 30px;
+      width: 200px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(162, 89, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Manual da Mudança</h1>
+  <p>Você não precisa nascer bonito. Você precisa despertar o que já existe em você. Um manual direto ao ponto para quem quer mudar a aparência, mente e autoestima.</p>
+  
+  <div class="timer" id="timer">50:43</div>
+  
+  <a href="#" class="cta-button" target="_blank">Quero essa transformação</a>
+  
+  <img src="modelo.webp" alt="Modelo" class="product-img">
+
+  <script>
+    // Contador regressivo
+    let timeLeft = 50 * 60 + 43;
+    const timerEl = document.getElementById("timer");
+
+    function updateTimer() {
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerEl.textContent = `${minutes}:${seconds}`;
+      if (timeLeft > 0) timeLeft--;
+    }
+    setInterval(updateTimer, 1000);
+  </script>
+
+</body>
+</html>
